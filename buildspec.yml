@@ -11,11 +11,12 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...          
+      - echo Building the Docker image...      
+      - systemctl start docker    
       - docker build -t ecs:latest .
-      - docker tag ecs:latest public.ecr.aws/d3f1q5y4/ecs:latest      
+      - docker tag ecs:latest $REPOSITORY_URI:latest      
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push public.ecr.aws/d3f1q5y4/ecs:latest
+      - docker push $REPOSITORY_URI:latest
