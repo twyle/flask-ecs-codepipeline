@@ -26,5 +26,5 @@ phases:
       # - docker push public.ecr.aws/d3f1q5y4/ecs:latest
       # - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - docker push 950622314338.dkr.ecr.us-east-1.amazonaws.com/ecs:latest
-      - printf '[{"name":"ecs-container","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG  > imagedefinitions.json
+      - printf '[{"name":"ecs-container","imageUri":"950622314338.dkr.ecr.us-east-1.amazonaws.com/ecs:latest"}]' > imagedefinitions.json
       - cat imagedefinitions.json 
