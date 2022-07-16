@@ -12,7 +12,8 @@ def home():
     """Confirm that the application is working."""
     data = {
         'flask env': os.environ['FLASK_ENV'],
-        'secret key': os.environ['SECRET_KEY']
+        'secret key': os.environ['SECRET_KEY'],
+        'postgres host': os.environ['POSTGRES_HOST']
     }
     return jsonify(data), 200
 
